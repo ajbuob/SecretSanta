@@ -16,32 +16,29 @@ import com.ajbuob.santa.impl.SecretSantaImpl2;
 
 @RunWith(Parameterized.class)
 public class SecretSantaNullTest {
-	
-	private SecretSanta secretSanta;
-	
-	public SecretSantaNullTest(SecretSanta secretSanta) {
-		this.secretSanta = secretSanta;
-	}
 
-	@Test
-	public void testGenerateAssignments() {
-		
-		final String[] participants = null;
-		secretSanta.generateAssignments(participants);
-		
-		final String[] assignments = secretSanta.generateAssignments(participants);
-		
-		assertTrue(Arrays.equals(null,assignments));		
-	}
-	
-	@Parameters
+    private SecretSanta secretSanta;
+
+    public SecretSantaNullTest(SecretSanta secretSanta) {
+        this.secretSanta = secretSanta;
+    }
+
+    @Test
+    public void testGenerateAssignments() {
+
+        final String[] participants = null;
+        secretSanta.generateAssignments(participants);
+
+        final String[] assignments = secretSanta.generateAssignments(participants);
+
+        assertTrue(Arrays.equals(new String[]{}, assignments));
+    }
+
+    @Parameters
     public static Collection<Object[]> getParameters() {
-      return Arrays.asList(new Object[][] {
-        { new SecretSantaImpl1() },
-        { new SecretSantaImpl2()}
-      });
-
-   }
-
-	
+        return Arrays.asList(new Object[][]{
+                {new SecretSantaImpl1()},
+                {new SecretSantaImpl2()}
+        });
+    }
 }
