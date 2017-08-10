@@ -8,5 +8,4 @@ public interface SecretSanta {
      * is matched with assignments[0], participants[1] is matched with assignments[1], and so on.
      */
     String[] generateAssignments(final String[] participants);
-
 }
