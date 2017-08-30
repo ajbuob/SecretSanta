@@ -18,7 +18,7 @@ import com.ajbuob.santa.impl.SecretSantaImpl2;
 @RunWith(Parameterized.class)
 public class SecretSantaTest {
 
-    private SecretSanta secretSanta;
+    private final SecretSanta secretSanta;
 
     public SecretSantaTest(SecretSanta secretSanta) {
         this.secretSanta = secretSanta;
